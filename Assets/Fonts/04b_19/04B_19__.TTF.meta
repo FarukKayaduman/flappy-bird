@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ad924b05dfa04f4caaac8c28ebc1da9
+guid: bc41bf57046c07a4daae83d6423af44e
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Bit5x3
+  - 04b_19
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private new Rigidbody2D rigidbody;
+    [SerializeField] private float yVelocity = 2.5f;
+
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            AddVelocityOnYAxis();
+        }
     }
+
+    private void AddVelocityOnYAxis()
+    {
+        rigidbody.velocity = Vector2.up * yVelocity;
+    }
+
 }
