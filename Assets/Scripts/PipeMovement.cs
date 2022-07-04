@@ -4,16 +4,29 @@ using UnityEngine;
 
 public class PipeMovement : MonoBehaviour
 {
-    [SerializeField] private float pipeSpeed = 0.55f;
+    public float pipeSpeed = 0.55f;
 
-    private void Start()
+    // Create an instance of the object
+    public static PipeMovement m_Instance = null;
+    //Singleton
+    public static PipeMovement Instance
     {
-        Destroy(gameObject, 6.0f);
+        get
+        {
+            if (m_Instance == null)
+            {
+                m_Instance = (PipeMovement)FindObjectOfType(typeof(PipeMovement));
+            }
+            return m_Instance;
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position += pipeSpeed * Time.deltaTime * Vector3.left;
+        if (!PlayerManager.Instance.isGameEnded && GameManager.Instance.initDone)
+        {
+            transform.position += pipeSpeed * Time.deltaTime * Vector3.left;
+        }
     }
 }

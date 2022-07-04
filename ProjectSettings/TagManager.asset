@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
+  - Pipe
   - Gate
+  - Ground
+  - PipePrefab
   layers:
   - Default
   - TransparentFX
