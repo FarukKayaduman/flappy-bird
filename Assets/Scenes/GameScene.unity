@@ -268,7 +268,7 @@ SpriteRenderer:
   m_DrawMode: 0
   m_Size: {x: 1.44, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -751,7 +751,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &911072708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,6 +1205,7 @@ GameObject:
   - component: {fileID: 1983813825}
   - component: {fileID: 1983813827}
   - component: {fileID: 1983813828}
+  - component: {fileID: 1983813829}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -1258,7 +1259,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 1.44, y: 0.55972236}
+  m_Size: {x: 2.5, y: 0.55972236}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1272,7 +1273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983813824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0.53, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1297,13 +1298,13 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.68, y: 0.56}
-    newSize: {x: 1.44, y: 0.55972236}
+    newSize: {x: 2.5, y: 0.55972236}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.44, y: 0.5597224}
+  m_Size: {x: 2.5, y: 0.5597224}
   m_EdgeRadius: 0
 --- !u!95 &1983813828
 Animator:
@@ -1325,6 +1326,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1983813829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983813824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f63c6268c14941429d49c96753dd214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2015553910
 GameObject:
   m_ObjectHideFlags: 0

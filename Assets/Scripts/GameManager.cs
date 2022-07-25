@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && !PlayerManager.Instance.isGameEnded && !initDone)
