@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PipeManager : MonoBehaviour
@@ -15,12 +14,10 @@ public class PipeManager : MonoBehaviour
             StartCoroutine(CreatePipe());
             pipeCoroutineStarted = true;
         }
-        
     }
 
     private IEnumerator CreatePipe()
     {
-        
         for (int i = 0; i < 5; i++)
         {
             Instantiate(pipePrefab, new Vector3(2.0f, Random.Range(0.25f, 0.75f), 0), Quaternion.identity);

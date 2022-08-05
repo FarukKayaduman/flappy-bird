@@ -621,6 +621,7 @@ GameObject:
   - component: {fileID: 911072705}
   - component: {fileID: 911072707}
   - component: {fileID: 911072708}
+  - component: {fileID: 911072709}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Player
@@ -764,10 +765,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b56ea6a13604744b9b988c016990acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody2D: {fileID: 911072707}
-  velocity: 2.5
   isGameEnded: 0
   restartButton: {fileID: 199587426}
+--- !u!114 &911072709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911072702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d236295b2f1b1468a13f0bb2117602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 2.5
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

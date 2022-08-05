@@ -1,12 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private PipeManager pipeManager;
+
+    public bool isGameEnded = false;
 
     public bool initDone = false;
 
@@ -34,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !PlayerManager.Instance.isGameEnded && !initDone)
+        if (Input.GetMouseButtonDown(0) && !GameManager.Instance.isGameEnded && !initDone)
         {
             InitializeGameAtStart();
             initDone = true;
@@ -43,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     private void InitializeGameAtStart()
     {
-        PlayerManager.Instance.rigidbody2D.gravityScale = 1.0f;
+        PlayerManager.Instance.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
         pipeManager.gameObject.SetActive(true);
     }
 
@@ -54,6 +53,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        PlayerManager.Instance.isGameEnded = true;
+        GameManager.Instance.isGameEnded = true;
     }
 }

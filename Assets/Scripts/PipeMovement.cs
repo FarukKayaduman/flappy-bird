@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PipeMovement : MonoBehaviour
@@ -24,7 +22,7 @@ public class PipeMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!PlayerManager.Instance.isGameEnded && GameManager.Instance.initDone)
+        if (!GameManager.Instance.isGameEnded && GameManager.Instance.initDone)
         {
             transform.position += pipeSpeed * Time.deltaTime * Vector3.left;
         }

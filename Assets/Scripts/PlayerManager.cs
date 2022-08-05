@@ -1,14 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] public new Rigidbody2D rigidbody2D;
-    [SerializeField] private float velocity = 2.5f;
-
-    public bool isGameEnded = false;
     public Button restartButton;
 
     // Create an instance of the object
@@ -24,21 +18,6 @@ public class PlayerManager : MonoBehaviour
             }
             return m_Instance;
         }
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        // Add velocity if clicked
-        if (Input.GetMouseButtonDown(0) && !PlayerManager.Instance.isGameEnded)
-        {
-            AddVelocityOnYAxis();
-        }
-    }
-
-    private void AddVelocityOnYAxis()
-    {
-        rigidbody2D.velocity = Vector2.up * velocity;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
