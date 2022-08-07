@@ -8,6 +8,9 @@ A clone of Flappy Bird game, made with Unity
 </p>
 
 #
+Android Application Package (APK): [Download](https://github.com/FarukKayaduman/Flappy-Bird/raw/main/releases/android/Flappy-Bird%20v0.2.2.apk)
+
+#
 Notice: This project is not for commercial use.
 - Unity Version: 2021.3.2f1
 
