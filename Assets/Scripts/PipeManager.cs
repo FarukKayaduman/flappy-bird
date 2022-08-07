@@ -20,7 +20,7 @@ public class PipeManager : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            Instantiate(pipePrefab, new Vector3(2.0f, Random.Range(0.25f, 0.75f), 0), Quaternion.identity);
+            Instantiate(pipePrefab, new Vector3(2.0f, Random.Range(-0.2f, 0.75f), 0), Quaternion.identity);
             yield return new WaitForSeconds(1.4f);
         }
         StopCoroutine(CreatePipe());

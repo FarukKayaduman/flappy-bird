@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rigidbody2D;
-    [SerializeField] private float velocity = 2.5f;
+    private new Rigidbody2D rigidbody2D;
+    
+    [SerializeField] private float velocity = 2.3f;
+
+    [SerializeField] private AudioClip wingClip;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && GameManager.Instance.isGameEnded == false)
         {
             AddVelocityOnYAxis();
+            AudioManager.Instance.PlayAudio(wingClip);
+
         }
     }
 

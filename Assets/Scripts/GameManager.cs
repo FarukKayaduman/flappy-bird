@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private PipeManager pipeManager;
 
+    [SerializeField] private AudioClip dieClip;
+    [SerializeField] private AudioClip hitClip;
+
     public bool isGameEnded = false;
 
     public bool initDone = false;
@@ -26,6 +29,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        Screen.orientation = ScreenOrientation.Portrait;
+        Screen.autorotateToLandscapeLeft = false;
+        Screen.autorotateToLandscapeRight = false;
+        Screen.autorotateToPortrait = false;
+        Screen.autorotateToPortraitUpsideDown = false;
+    }
+
     private void Start()
     {
         Time.timeScale = 1.0f;
@@ -36,14 +48,14 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !GameManager.Instance.isGameEnded && !initDone)
         {
             InitializeGameAtStart();
-            initDone = true;
         }
     }
 
     private void InitializeGameAtStart()
     {
-        PlayerManager.Instance.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+        PlayerManager.Instance.GetComponent<Rigidbody2D>().gravityScale = 0.75f;
         pipeManager.gameObject.SetActive(true);
+        initDone = true;
     }
 
     public void Restart()
@@ -53,6 +65,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        GameManager.Instance.isGameEnded = true;
+        Instance.isGameEnded = true;
+        AudioManager.Instance.PlayAudio(dieClip);
+        AudioManager.Instance.PlayAudio(hitClip);
     }
 }

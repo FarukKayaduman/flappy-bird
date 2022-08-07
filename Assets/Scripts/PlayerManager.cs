@@ -5,6 +5,8 @@ public class PlayerManager : MonoBehaviour
 {
     public Button restartButton;
 
+    [SerializeField] private AudioClip pointClip;
+
     // Create an instance of the object
     public static PlayerManager m_Instance = null;
     //Singleton
@@ -26,18 +28,28 @@ public class PlayerManager : MonoBehaviour
         {
             GameManager.Instance.score++;
             UIManager.Instance.UpdateScoreText();
+            AudioManager.Instance.PlayAudio(pointClip);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Pipe") || collision.collider.CompareTag("Ground"))
+        if (!GameManager.Instance.isGameEnded)
         {
-            GameManager.Instance.GameOver();
-            if (collision.collider.CompareTag("Pipe"))
-                collision.collider.gameObject.GetComponent<Collider2D>().enabled = false;
-            restartButton.gameObject.SetActive(true);
+            if (collision.collider.CompareTag("Ground"))
+            {
+                GameManager.Instance.GameOver();
+                restartButton.gameObject.SetActive(true);
+            }
+            else if (collision.collider.CompareTag("Pipe"))
+            {
+                collision.collider.gameObject.transform.parent.GetChild(0).gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                collision.collider.gameObject.transform.parent.GetChild(1).gameObject.SetActive(false);
+                collision.collider.gameObject.transform.parent.GetChild(2).gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+                GameManager.Instance.GameOver();
+                restartButton.gameObject.SetActive(true);
+            }
         }
     }
-
 }
